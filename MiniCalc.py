@@ -19,6 +19,6 @@ else:
             else:
                 resultado=num1%num2
 
-print(resultado)                
+print("Resposta : {}".format(resultado))                
                 
                                           

@@ -8,3 +8,6 @@ while entrada !=0:
         entrada =int(input("Digite o proximo da sequencia ?"))
 
 print(soma)    
+
+ 
+

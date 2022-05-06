@@ -4,7 +4,7 @@ a1 = int(input("Digite a sequencia ?"))
 contador=1
 
 if(entrada==1):
-    contador=1
+   print(contador)
 else:    
     while(entrada>1):
         a2 = int(input("Digite a sequencia ?"))

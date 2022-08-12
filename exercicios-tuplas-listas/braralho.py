@@ -24,6 +24,15 @@ def cria_baralho():
             bar.append(c)
     return bar
 
+def somaMao(mao):
+    soma=0
+    for c in mao:
+        if c[0]>10:
+            soma=soma+10
+        else:
+            soma=soma+c[0]
+    return soma
+
     
 def comprar(deck):
     
@@ -66,5 +75,3 @@ while resp == "s":
     resp = input("Quer mais cartas (s/n)?")
 
 
-
-# print(baralho)

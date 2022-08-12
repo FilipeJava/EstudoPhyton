@@ -1,11 +1,5 @@
 import math
-def media(tupla):
-    j=0
-    soma=0
-    while j<len(tupla):
-        soma=soma+tupla[j]
-        j=j+1    
-    return soma/len(tupla)
+import Maior
 
 
 def desvioPadrao(tupla):
@@ -13,7 +7,7 @@ def desvioPadrao(tupla):
     soma=0
     diferenca=0
     desvio=0
-    mediaDesvio=media(tupla)
+    mediaDesvio=Maior.media(tupla)
     while i<len(tupla):
         diferenca = (mediaDesvio-tupla[i])**2
         soma=soma+diferenca

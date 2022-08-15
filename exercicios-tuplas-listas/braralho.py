@@ -46,6 +46,9 @@ def distribui(qtd,deck):
     return mao
 
 
+
+
+
 def embaralhar(deck):
     qtd=random.randint(200,1000)
     controlador = 0
@@ -65,13 +68,31 @@ embaralhar(baralho)
 humano = distribui(2,baralho)
 cpu = distribui(2,baralho)
 
-print(humano)
+print("Pontos: ",somaMao(humano))
 resp = input("Quer mais cartas (s/n)?")
 
 while resp == "s":
     c = comprar(baralho)
     humano.append(c)
     print(humano)
+    print("Pontos: ",somaMao(humano))
     resp = input("Quer mais cartas (s/n)?")
+
+while somaMao(cpu)<17:
+    cpu.append(comprar(baralho))
+    print(cpu)
+
+if somaMao(humano)>21:
+    print("O vencedor é o computador!")
+    print(cpu)
+    print("Pontos: ",somaMao(cpu))
+elif somaMao(humano)== somaMao(cpu):
+    print("empatou ,O vencedor é o computador!")
+    print(cpu)
+    print("Pontos: ",somaMao(cpu))
+elif somaMao(humano)<21 and somaMao(cpu)>21:
+    print("Voce venceu!")
+    print(cpu)
+    print("Pontos: ",somaMao(cpu))
 
 

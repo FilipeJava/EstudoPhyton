@@ -16,6 +16,9 @@ def dimensao(matriz):
     return (lin,col)
 
 
+
+
+
 matriz=[]
 i=0
 

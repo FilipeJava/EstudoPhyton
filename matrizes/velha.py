@@ -1,39 +1,47 @@
-
-
-
-
 def criaTabuleiro():
-    tabuleiro =[]
-    i=0
-    while i<3:
-        tabuleiro.append(['']*3)
-        i=i+1
-    return tabuleiro
+    matriz = []
+    matriz.append([' '] * 3)
+    matriz.append([' '] * 3)
+    matriz.append([' '] * 3)
+    return matriz
 
+def haGanhador(tab):
+    for i in range(3):
+        if tab[i][0]==tab[i][1] and tab[i][1]==tab[i][2] and tab[i][0]!=' ':
+            return True
+        if tab[0][i]==tab[1][i] and tab[1][i]==tab[2][i] and tab[0][i]!=' ':
+            return True
+    #diagonal principal        
+    if tab[0][0]==tab[1][1] and tab[1][1]==tab[2][2] and tab[0][0]!=' ':
+        return True
+    #diagonal secundaria        
+    if tab[0][2]==tab[1][1] and tab[1][1]==tab[2][0] and tab[0][2]!=' ':
+        return True
+        
+    return False        
 
-
-
-def haGanhador():
-    pass
 
 def temEspaco(tab):
-    resp =FALSE
-    i=0
-    while i<3:
-        j=0
-        while i<3:
-            
-    tab[0][1]==' '
-    
+    for i in range(3):
+        for j in range(3):
+            if tab[i][j] == ' ':
+                return True
+    return False                
 
-def joga(tab,lin,col,jogador):
-    pass
+
+def joga(tab, lin, col, jogador):
+    if lin < 0 or lin > 2 or col < 0 or col > 2 or tab[lin][col] != ' ':
+        return False
+    tab[lin][col] = jogador
+    return True        
 
 def trocaJogador(jogador):
     if jogador == 'X':
-        return'O'
+        return 'O'
     else:
-        return 'X'    
+        return 'X'
 
 def imprime(tab):
-    pass
+    for lin in tab:
+        print(lin)
+
